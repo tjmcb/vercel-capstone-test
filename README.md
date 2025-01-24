@@ -12,12 +12,10 @@
 
 ## Keywords
 
-Section #, as well as any words that quickly give your peers insights into the application like programming language, development platform, type of application, etc.
-
+AAC, go fish, collaboration, game 
 ## Project Abstract
 
-This document proposes a novel application of a text message (SMS or Email) read-out and hands-free call interacted between an Android Smartphone and an infotainment platform (headunit) in a car environment. When a phone receives an SMS or Email, the text message is transferred from the phone to the headunit through a Bluetooth connection. On the headunit, user can control which and when the received SMS or E-mail to be read out through the in-vehicle audio system. The user may press one button on the headunit to activate the hands-free feature to call back the SMS sender.
-
+This project will use an AAC device to facilitate go-fish between 2-4 children who may have trouble communicating. The device will host both the game and the communication seamlessly.
 ## High Level Requirement
 
 Describe the requirements – i.e., what the product does and how it does it from a user point of view – at a high level.
