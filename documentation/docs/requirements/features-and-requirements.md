@@ -4,19 +4,30 @@ sidebar_position: 4
 
 # Features and Requirements
 ## Functional Requirements
-- Users can create a game room or join others with a code (similar to Kahoot)
-    - Each user types their name which will be included on the AAC board
 - Users can connect with up to 3 other users to play Go Fish integrated with Augmentative and Alternative Communication (**AAC**) software
-- Users will each have their own screen with a synced game state
-    - Cards held in hand will be hidden from other players
 - Users can communicate in real-time via an integrated AAC menu or by performing in-game actions
     - Text-To-Speech (**TTS**) will say selected messages out loud
 - Users can use frequent game specific phrases included on AAC board for faster communications
     - Ability to quickly say common quick statements like yes/no/repeat
     - AAC Grid layout should be customizable
 - Game will pause or indicate when a user is making an AAC message
+- Users will each have their own screen with a synced game state
+    - Cards held in hand will be hidden from other players
+- Users can create a game room or join others with a code (similar to Kahoot)
+    - Each user types their name which will be included on the AAC board
+- The application will have clear instructions on game rules, potentially with a breif tutorial before gameplay
 
 ## Non-Functional Requirements
+- Game menus should be simple and intuitive to maximize accesibility and minimize time taken per turn.
+    - Clear audio and visual cues for game actions like asking for a card.
+- The Go Fish game should integrate seamlessly with AAC making it easy to switch between communication and the game.
+- Application will stay in line with standard accessibility guidelines.
+    - Especially those applied to AAC and accomodating those with disabilities.
+- Connecting young users in a lobby should be simple enough to start games quickly.
+- The application should feature modifications to the base Go Fish game to be more interesting to children.
+    - Customizable card decks (for example, instead of card ranks there could be ranks of animals or foods).
+
+## Non-functional (old)
 - The Go Fish game should integrate seamlessly with AAC making it easy to switch between communication and the game 
     - Pausing to let an AAC user speak can help others build empathy for that user
 - The application will have clear menu options for creating and joining game lobbies
