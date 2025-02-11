@@ -19,7 +19,7 @@ sidebar_position: 5
 
 
 ## **Use Case 3 - Start a Game**
-**Starts from:** 
+**Starts from:**
 * [Use Case 1](#use-case-1---start-a-lobby).
 
 1. The user sees a list of players who have joined the lobby.
@@ -27,8 +27,8 @@ sidebar_position: 5
 3. The user is taken to the game board and sees their starting hand.
 
 ## **Use Case 4 - Lobby starts**
-**Starts from:** 
-* [Use Case 2](#use-case-2---join-a-lobby). 
+**Starts from:**
+* [Use Case 2](#use-case-2---join-a-lobby).
 
 1. The user sees a list of players who have joined the lobby.
 2. The user waits for the lobby leader to click the "Start Game" button.
@@ -36,10 +36,10 @@ sidebar_position: 5
 4. The user is taken to the game board and sees their starting hand.
 
 ## **Use Case 5 - Take a Card from a Player Successfully**
-**Starts from:** 
-* [Use Case 3](#use-case-3---start-a-game) 
+**Starts from:**
+* [Use Case 3](#use-case-3---start-a-game)
 * [Use Case 4](#use-case-4---be-in-a-lobby-that-started)
-* [Use Case 5](#use-case-5---take-a-card-from-a-player-successfully). 
+* [Use Case 5](#use-case-5---take-a-card-from-a-player-successfully).
 
 1. The user sees that it is their turn to play.
 2. The user clicks on a card in their own hand to select it.
@@ -50,10 +50,10 @@ sidebar_position: 5
 
 
 ## **Use Case 6 - Take a Card from a Player and Fail ("Go Fish")**
-**Starts from:** 
-* [Use Case 3](#use-case-3---start-a-game) 
-* [Use Case 4](#use-case-4---be-in-a-lobby-that-started) 
-* [Use Case 5](#use-case-5---take-a-card-from-a-player-successfully). 
+**Starts from:**
+* [Use Case 3](#use-case-3---start-a-game)
+* [Use Case 4](#use-case-4---be-in-a-lobby-that-started)
+* [Use Case 5](#use-case-5---take-a-card-from-a-player-successfully).
 
 1. The user sees it is their turn.
 2. The user clicks on a card in their own hand to select it.
@@ -61,13 +61,13 @@ sidebar_position: 5
 4. The other player does not have the requested card.
 5. The user sees and hears a "Go Fish" message.
 6. The user receives a card from the deck if there are any.
-7. If the user now has four of a kind - [Use Case 7](#use-case-7---place-a-four-of-a-kind-set-in-the-pool-automatically). 
+7. If the user now has four of a kind - [Use Case 7](#use-case-7---place-a-four-of-a-kind-set-in-the-pool-automatically).
 8. The user’s turn automatically ends.
 
 
 ## **Use Case 7 - Place a Four-of-a-Kind Set in the Pool Automatically**
-**Starts from:** 
-* [Use Case 5](#use-case-5---take-a-card-from-a-player-successfully) 
+**Starts from:**
+* [Use Case 5](#use-case-5---take-a-card-from-a-player-successfully)
 * [Use Case 6](#use-case-6---take-a-card-from-a-player-and-fail-go-fish)
 
 1. The user collects four matching cards in their hand.
@@ -76,12 +76,12 @@ sidebar_position: 5
 4. The user sees a message confirming the completed set.
 
 
-## **Use Case 8 - Run Out of Cards and Draw More** 
+## **Use Case 8 - Run Out of Cards and Draw More**
 
 1. The user puts down a set or gets cards taken from them and has an empty hand.
 2. The user immediately and automatically draws upto 3 cards from the deck.
 
-## **Use Case 9 - Run Out of Cards Completely** 
+## **Use Case 9 - Run Out of Cards Completely**
 
 1. The user puts down a set or gets cards taken from them and has an empty hand.
 2. The user cannot draw any cards as the deck is empty.
@@ -106,7 +106,7 @@ sidebar_position: 5
 4. The user hears the phrase read aloud.
 
 ## **Use Case 15 - Win the Game**
-**Starts from:** 
+**Starts from:**
 * [Use Case 7](#use-case-7---place-a-four-of-a-kind-set-in-the-pool-automatically)
 
 1. The user places their second four-of-a-kind set in the pool.
@@ -115,7 +115,7 @@ sidebar_position: 5
 
 
 ## **Use Case 16 - End the Game When Only One Player Can Move**
-**Starts from:** 
+**Starts from:**
 * [Use Case 8](#use-case-8---run-out-of-cards)
 
 1. The user sees that only one player has cards remaining.
