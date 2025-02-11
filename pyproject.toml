@@ -1,0 +1,7 @@
+[project]
+name = "gofish"
+version = "0.1.0"
+description = "Multiplayer Go Fish with AAC support."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
