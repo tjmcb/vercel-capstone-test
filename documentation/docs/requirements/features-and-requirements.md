@@ -10,19 +10,19 @@ sidebar_position: 4
 - Users can use frequent game specific phrases included on AAC board for faster communications.
     - Game actions will automatically use TTS without any extra AAC actions.
     - Ability to quickly say common quick statements like yes/no/repeat.
-- Game will indicate when a user is making an AAC message.
+- The system will indicate to all players when a user is making an AAC message.
 - Users will each have their own screen with a synced game state.
     - Cards held in hand will be hidden from other players.
     - Users will see the actions other users take on their screen.
 - Users can create a game room or join others with a code (similar to Kahoot).
     - Each user types their name which will be included on the AAC board.
-- The application will have clear instructions on game rules, potentially with a breif tutorial before gameplay.
+- The application will have clear instructions on game rules, for example with a breif tutorial before gameplay.
 
 ## Non-Functional Requirements
 - Game menus should be simple and intuitive to maximize accesibility and minimize time taken per turn.
     - The game should have clear audio and visual cues for game actions like asking for a card.
 - The Go Fish game should integrate seamlessly with AAC making it easy to switch between communication and the game.
-- Application will stay in line with standard accessibility guidelines.
+- Application should stay in line with standard accessibility guidelines.
     - Especially those applied to AAC and accomodating those with disabilities.
 - This web application should be compatible with mobile devices such as tablets.
 - Connecting young users in a lobby should be simple enough to start games quickly.
@@ -55,6 +55,6 @@ Go Fish is usually played with a single deck of 52 cards, although with virtual 
 - Extra Actions:
     - If a player gets any book, they must play them face up on the table, AKA the *“pool”*
     - If a player runs out of cards:
-        - Draw [one / up to three] cards from the go fish pile
+        - Draw up to three cards from the go fish pile
         - If there are no cards in the go fish pile, they cannot make any more moves
-            - End the game if only one player left who can make a move
+            - End the game if only one player left who can make a move, last player standing would win
