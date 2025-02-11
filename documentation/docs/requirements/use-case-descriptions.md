@@ -85,6 +85,7 @@ sidebar_position: 5
 
 1. The user puts down a set or gets cards taken from them and has an empty hand.
 2. The user cannot draw any cards as the deck is empty.
+3. The user will pass their turn if it becomes their turn.
 
 ## **Use Case 10 - Use Game Text Chat**
 1. The user clicks the "Chat" button.
