@@ -12,7 +12,7 @@
 
 ## Keywords
 
-AAC, go fish, collaboration, game 
+AAC, go fish, collaboration, game
 ## Project Abstract
 
 This project will use an AAC device to facilitate go-fish between 2-4 children who may have trouble communicating. The device will host both the game and the communication seamlessly.

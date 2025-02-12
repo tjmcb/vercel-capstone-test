@@ -28,8 +28,8 @@ const title = rawProjectName
   .split(' ')
   .map(word => {
     // Make sure the word has at least one character
-    return word.length > 0 
-      ? word[0].toUpperCase() + word.substring(1) 
+    return word.length > 0
+      ? word[0].toUpperCase() + word.substring(1)
       : '';
   })
   .join(' ');
