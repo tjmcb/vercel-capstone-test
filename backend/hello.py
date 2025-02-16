@@ -4,8 +4,7 @@ from fastapi import FastAPI
 
 import random
 
-from lobby import Lobby
-from player import Player
+from models import Lobby, Player
 
 app = FastAPI()
 
@@ -27,10 +26,8 @@ async def test_game_state():
         for id in game.players:
             random_card = random.choice(game.deck)
             game.deck.remove(random_card)
-            game.deck_size -= 1
 
             game.players[id].cards.append(random_card)
-            game.players[id].card_count += 1
 
     # start game
     game.started = True
