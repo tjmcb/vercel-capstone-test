@@ -1,3 +1,7 @@
+from typing import Union
+from pydantic import BaseModel
+from fastapi import FastAPI, WebSocket
+from models import Message, MessageKind, QueryResponse, Lobby, Player
 import random
 
 from fastapi import FastAPI, WebSocket
@@ -34,6 +38,13 @@ def get_lobby(code: str) -> dict:
         return {"error": "Lobby not found"}
     return {"code": code, "players": lobby["players"]}
 
+@app.post("/lobby/{code}/join")
+def join_lobby(code:str, player:str):
+    lobby = lobbies.get(code)
+    if lobby is None:
+        return {"error": "Lobby not found"}
+    lobby["players"].append(player)
+    return {"code":code, "players":lobby["players"]}
 
 @app.get("/testGameState/")
 async def test_game_state() -> Lobby:
