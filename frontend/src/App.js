@@ -27,7 +27,7 @@ const WebSocketDemo = () => {
     const sendMessage = () => {
         ws.send(JSON.stringify({ data: { type: "chat", message }, source_player_id: 0 }));
         setMessage("");
-		addMessage(`[Client] Chat sent: "${message}"` );
+		addMessage(`[Client] Chat sent: "${message}"`);
     };
 
     const sendQuery = () => {
@@ -40,6 +40,8 @@ const WebSocketDemo = () => {
             sendMessage();
         }
     };
+	
+	const isWebSocketConnecting = ws && ws.readyState === WebSocket.CONNECTING;
 
     return (
         <div>
@@ -51,7 +53,7 @@ const WebSocketDemo = () => {
                 onKeyDown={handleKeyDown}
                 placeholder="Type a message..."
             />
-            <button onClick={sendMessage} disabled={ws && ws.readyState !== WebSocket.OPEN}>Send</button>
+            <button onClick={sendMessage} disabled={isWebSocketConnecting}>Send</button>
 
             <h3>Got any...</h3>
             Player: 
@@ -61,7 +63,6 @@ const WebSocketDemo = () => {
                 max="4" 
                 value={playerId} 
                 onChange={(e) => setPlayerId(e.target.value)} 
-                className="slider" 
             />
             <span> {playerId}</span>
             <br />
@@ -72,11 +73,10 @@ const WebSocketDemo = () => {
                 max="10" 
                 value={card} 
                 onChange={(e) => setCard(e.target.value)} 
-                className="slider" 
             />
             <span> {card}</span>
             <br />
-            <button onClick={sendQuery} disabled={ws && ws.readyState !== WebSocket.OPEN}>Send</button>
+            <button onClick={sendQuery} disabled={isWebSocketConnecting}>Send</button>
 			
 			<h3>Event Log</h3>
 			<div>
