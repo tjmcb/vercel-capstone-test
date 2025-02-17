@@ -133,3 +133,5 @@ Protocol for WSS messages.
 ```
 
 ## Single Page Application (React)
+
+Two-way communication of moves and chat messages between client and server. Communicates with the FastAPI backend via common WebSocket protocol. Currently, no functionality with HTTP endpoints. 
