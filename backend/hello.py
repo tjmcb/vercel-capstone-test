@@ -1,6 +1,6 @@
 from typing import Union
 from pydantic import BaseModel
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI, WebSocket, HTTPException
 from models import Message, MessageKind, QueryResponse, Lobby, Player
 import random
 
@@ -40,9 +40,10 @@ def get_lobby(code: str) -> dict:
 
 @app.post("/lobby/{code}/join")
 def join_lobby(code:str, player:str):
-    lobby = lobbies.get(code)
-    if lobby is None:
-        return {"error": "Lobby not found"}
+    try:
+        lobby = lobbies[code]
+    except:
+        raise HTTPException(status_code=404, detail="Lobby not found")
     lobby["players"].append(player)
     return {"code":code, "players":lobby["players"]}
 
