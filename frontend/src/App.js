@@ -4,8 +4,8 @@ const WebSocketDemo = () => {
     const [messages, setMessages] = useState([]);
     const [ws, setWs] = useState(null);
     const [message, setMessage] = useState("");
-    const [playerId, setPlayerId] = useState(1);  // Track player ID
-    const [card, setCard] = useState(1);          // Track card value
+    const [playerId, setPlayerId] = useState(1);  
+    const [card, setCard] = useState(1);          
 
     useEffect(() => {
         const socket = new WebSocket("ws://localhost:8000/ws");
