@@ -1,11 +1,9 @@
 from typing import Union
 
 from fastapi import FastAPI, WebSocket
-from .models import Message, MessageKind, QueryResponse
+from .models import Message, MessageKind, QueryResponse, Lobby, Player
 
 import random
-
-from models import Lobby, Player
 
 app = FastAPI()
 
