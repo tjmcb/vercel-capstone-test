@@ -140,26 +140,11 @@ sequenceDiagram
 
     User->>WebApplication: Puts down a set or gets cards taken, hand is empty
     WebApplication->>Backend: Update backend with request to draw up to 3 cards
-    Backend-->>WebApplication: Return up to 3 cards 
+    Backend-->>WebApplication: Return up to 3 cards
     WebApplication-->>User: Show user receiving up to 3 cards
 ```
 
-## **Use Case 9 - Run Out of Cards Completely**
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant WebApplication as Web Application
-    participant Backend
-
-    User->>WebApplication: Puts down a set or gets cards taken, hand is empty
-    WebApplication->>Backend: Check if cards are available in the deck
-    Backend-->>WebApplication: No cards available in the deck
-    WebApplication-->>User: Display message saying no cards available
-    WebApplication-->>User: Automatically pass user's turn
-```
-
-## **Use Case 10 - Use Game Text Chat**
+## **Use Case 9 - Use Game Text Chat**
 
 ```mermaid
 sequenceDiagram
@@ -177,7 +162,7 @@ sequenceDiagram
     WebApplication-->>User: Display message in chat window
 ```
 
-## **Use Case 11 - Receive Message in Game Text Chat**
+## **Use Case 10 - Receive Message in Game Text Chat**
 
 ```mermaid
 sequenceDiagram
@@ -204,7 +189,7 @@ sequenceDiagram
     WebApplication-->>User: Display Player 2's message in chat window
 ```
 
-## **Use Case 12 - Use the AAC Menu**
+## **Use Case 11 - Use the AAC Menu**
 
 ```mermaid
 sequenceDiagram
@@ -216,14 +201,14 @@ sequenceDiagram
     User->>WebApplication: Clicks the "AAC Menu" button
     WebApplication-->>User: Display AAC Menu with available phrases/words with pictures
     User->>WebApplication: Selects a phrase or word from the menu
-    WebApplication->>Backend: Send selected phrase or word 
+    WebApplication->>Backend: Send selected phrase or word
     Backend-->>WebApplication: Acknowledge selected phrase or word
     WebApplication-->>User: Display selected phrase or word in the chat
     Backend->>Other User's Frontend: Broadcast selected phrase to other users
     WebApplication-->>User: Play the phrase out loud
 ```
 
-## **Use Case 13 - Receive AAC Communication**
+## **Use Case 12 - Receive AAC Communication**
 
 ```mermaid
 sequenceDiagram
@@ -240,9 +225,9 @@ sequenceDiagram
     WebApplication-->>User: Plays the phrase or word out loud
 ```
 
-## **Use Case 14 - Win the Game**
+## **Use Case 13 - Win the Game**
 
-```mermaid 
+```mermaid
 sequenceDiagram
     participant User
     participant WebApplication as Web Application
@@ -255,16 +240,4 @@ sequenceDiagram
     WebApplication-->>User: Display end game screen
 ```
 
-## **Use Case 15 - End the Game When Only One Player Can Move**
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant WebApplication as Web Application
-    participant Backend
-
-    WebApplication->>Backend: Check if only one player can move
-    Backend-->>WebApplication: Confirms only one player can move and that the game is over
-    WebApplication-->>User: Display message indicating game is over
-    WebApplication-->>User: Display message showing the winner
-```
