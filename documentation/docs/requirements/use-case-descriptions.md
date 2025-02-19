@@ -78,50 +78,36 @@ sidebar_position: 5
 1. The user puts down a set or gets cards taken from them and has an empty hand.
 2. The user immediately and automatically draws upto 3 cards from the deck.
 
-## **Use Case 9 - Run Out of Cards Completely**
-
-1. The user puts down a set or gets cards taken from them and has an empty hand.
-2. The user cannot draw any cards as the deck is empty.
-3. The user will pass their turn automatically if it becomes their turn.
-
-## **Use Case 10 - Use Game Text Chat**
+## **Use Case 9 - Use Game Text Chat**
 1. The user clicks the "Chat" button.
 2. The user types a message in the chat input box.
 3. The user clicks the send button.
 4. The user sees their message appear in the chat window.
 
-## **Use Case 11 - Receive Message in Game Text Chat**
+## **Use Case 10 - Receive Message in Game Text Chat**
 1. The user clicks the "Chat" button.
 2. The user sees previously sent messages.
 3. The user sees an indicator someone else is typing.
 4. The user sees someone else's message appear in the chat window.
 
-## **Use Case 12 - Use the AAC Menu**
+## **Use Case 11 - Use the AAC Menu**
 1. The user clicks the "AAC Menu" button.
 2. The user selects a phrase or word from the menu.
 3. The user sees the selected phrase appear in the chat.
 4. The user hears the phrase read aloud.
 
-## **Use Case 13 - Receive AAC Communication**
+## **Use Case 12 - Receive AAC Communication**
 1. The user receives AAC communication.
 2. The user sees the phrase or word displayed in the chat.
 3. The user hears the phrase or word read out loud.
 
-## **Use Case 14 - Win the Game**
+## **Use Case 13 - Win the Game**
 **Starts from:**
 * [Use Case 7](#use-case-7---place-a-four-of-a-kind-set-in-the-pool-automatically).
 
 1. The user places their second four-of-a-kind set in the pool.
 2. The user sees a message indicating they won.
 3. The user sees the game end.
-
-## **Use Case 15 - End the Game When Only One Player Can Move**
-**Starts from:**
-* [Use Case 8](#use-case-8---run-out-of-cards).
-
-1. The user sees that only one player has cards remaining.
-2. The user sees a message indicating that the game has ended.
-3. The user sees a message showing the only player with cards wins.
 
 ## **Use Case Diagram**
 ![Use Case Diagram](../../static/img/Usecase.drawio.png)
