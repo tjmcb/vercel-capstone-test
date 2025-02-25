@@ -10,7 +10,7 @@ The goal of this project is to provide a seamless, interactive, connection build
 
 The game is played with relevant Augmentative and Alternative Communication (AAC) on-screen at all times throughout gameplay, so both verbal and nonverbal children can play the game. 
 
-The game itself gives each player a role: one player becomes the manager who takes orders from customers and must communicate them to the team. Everyone else becomes cooks who follow the orders and respond to the manager. For both roles, an on screen interactive AAC interface will cover all communication needs and provide visual indicators when someone else is utilizing its functions. 
+The game itself gives each player a role: one player becomes the manager who takes orders from customers and must communicate them to the team. Everyone else becomes cooks who follow the orders and respond to the manager. For both roles, an on-screen interactive AAC interface will cover all communication needs and provide visual indicators when someone else is utilizing its functions. 
 
 ## Conceptual Design
 The game will be played on two to four separate devices. One player will host the game and others can join using a unique code. The frontend will be built using React.js, which will be used to build and manage the game components. The backend will be built using Python, which will be used to store game identifiers, connections, state, and logic. FastAPI will be used to process requests between the frontend and backend.
