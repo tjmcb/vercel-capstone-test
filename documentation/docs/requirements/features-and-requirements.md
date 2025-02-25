@@ -19,14 +19,14 @@ sidebar_position: 4
 ### Game Start
 - The system must include four roles in the game: one manager role and three cooking station roles.
 - The system must include the following cooking roles:
-  - Entree
+  - Burger
   - Sides
   - Drinks
 - The system must support gameplay with 2 to 4 players.
 - The system must designate one of up to four roles for each player, with the manager role being mandatory.
 - The system must assign remaining players to one of the three cooking roles, scaled to the number of players:
-  - If there are 2 players, the cook must be assigned to entree.
-  - If there are 3 players, two cooks must be randomly assigned to entree and sides.
+  - If there are 2 players, the cook must be assigned to making the burger.
+  - If there are 3 players, two cooks must be randomly assigned to making the burger and sides.
   - If there are 4 players, the three cooks must be randomly assigned to all stations.
 - The system must allow players to start the game.
 
@@ -53,23 +53,24 @@ sidebar_position: 4
 
 - The game can be played with 2-4 players.  
 - Customers will approach the counter and order a combination of three menu items:  
-  - **Entree** (Burger)  
-  - **Side** (Fries)  
+  - **Burger** 
+  - **Side** 
   - **Drink**  
 
 #### Cooking Process  
 
-- **Burger**  
+- **Burgers**  
   - Assemble buns, lettuce, patty, cheese, tomatoes, and pickles in a specific order.  
   - Cook the patty before assembling the burger.  
 
-- **Drink**  
+- **Drinks**  
   - Fill a cup with the correct drink from a set of machines.  
   - Ensure the correct drink is selected and adjust for ice/no ice preference.  
 
-- **Fries**  
-  - Chop potatoes and place them in a deep fryer.  
-  - Wait for the fries to cook before serving.  
+- **Sides**  
+  - Fries
+    - Chop potatoes and place them in a deep fryer.  
+    - Wait for the fries to cook before serving.  
 
 #### Gameplay Flow  
 
@@ -82,7 +83,7 @@ sidebar_position: 4
 
 - **Order Pricing for Each Correct Item:**  
   - Burger: **$5**  
-  - Fries: **$2.50**  
+  - Side: **$2.50**  
   - Drink: **$1**  
 - **Tip Bonus:**  
   - 0% to 25% based on completion speed.  
