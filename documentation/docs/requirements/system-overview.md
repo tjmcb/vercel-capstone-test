@@ -4,13 +4,13 @@ sidebar_position: 1
 
 # System Overview
 ## Project Abstract
-This project is a web-based cooking game that offers an interactive and accessible social experience for children in elementary school who struggle with verbal communication. 
+This project is a web-based cooking game that offers an interactive and accessible social experience for children in elementary school who struggle with verbal communication.
 
-The goal of this project is to provide a seamless, interactive, connection building experience for children, regardless of their ability to communicate verbally. This is done by creating an environment where a nonverbal child can drive the game using AAC, resulting in decreased social isolation. 
+The goal of this project is to provide a seamless, interactive, connection building experience for children, regardless of their ability to communicate verbally. This is done by creating an environment where a nonverbal child can drive the game using AAC, resulting in decreased social isolation.
 
-The game is played with relevant Augmentative and Alternative Communication (AAC) on-screen at all times throughout gameplay, so both verbal and nonverbal children can play the game. 
+The game is played with relevant Augmentative and Alternative Communication (AAC) on-screen at all times throughout gameplay, so both verbal and nonverbal children can play the game.
 
-The game itself gives each player a role: one player becomes the manager who takes orders from customers and must communicate them to the team. Everyone else becomes cooks who follow the orders and respond to the manager. For both roles, an on-screen interactive AAC interface will cover all communication needs and provide visual indicators when someone else is utilizing its functions. 
+The game itself gives each player a role: one player becomes the manager who takes orders from customers and must communicate them to the team. Everyone else becomes cooks who follow the orders and respond to the manager. For both roles, an on-screen interactive AAC interface will cover all communication needs and provide visual indicators when someone else is utilizing its functions.
 
 ## Conceptual Design
 The game will be played on two to four separate devices. One player will host the game and others can join using a unique code. The frontend will be built using React.js, which will be used to build and manage the game components. The backend will be built using Python, which will be used to store game identifiers, connections, state, and logic. FastAPI will be used to process requests between the frontend and backend.

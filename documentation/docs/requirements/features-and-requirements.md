@@ -53,8 +53,8 @@ sidebar_position: 4
 
 - The game can be played with 2-4 players.  
 - Customers will approach the counter and order a combination of three menu items:  
-  - **Burger** 
-  - **Side** 
+  - **Burger**
+  - **Side**
   - **Drink**  
 
 #### Cooking Process  
@@ -100,4 +100,3 @@ sidebar_position: 4
 - The system must maintain consistent performance and handle network disruptions gracefully.  
 - The system must be designed for easy updates and future feature expansions.  
 - The system must be compatible with mobile devices and modern web browsers.
-

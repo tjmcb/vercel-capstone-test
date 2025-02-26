@@ -239,5 +239,3 @@ sequenceDiagram
     WebApplication-->>User: Display message indicating user won
     WebApplication-->>User: Display end game screen
 ```
-
-
