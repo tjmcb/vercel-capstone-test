@@ -59,7 +59,7 @@ const WebSocketDemo = () => {
             Player:
             <input
                 type="range"
-                min="0"
+                min="1"
                 max="4"
                 value={playerId}
                 onChange={(e) => setPlayerId(e.target.value)}
