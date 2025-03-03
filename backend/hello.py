@@ -1,8 +1,7 @@
 import random
 
-from fastapi import FastAPI, WebSocket
-
-from .models import Lobby, Message, MessageKind, Player, QueryResponse
+from fastapi import FastAPI, HTTPException, WebSocket
+from models import Lobby, Message, MessageKind, Player, QueryResponse
 
 app = FastAPI()
 
@@ -32,6 +31,17 @@ def get_lobby(code: str) -> dict:
     lobby = lobbies.get(code)
     if lobby is None:
         return {"error": "Lobby not found"}
+    return {"code": code, "players": lobby["players"]}
+
+
+@app.post("/lobby/{code}/join")
+def join_lobby(code: str, player: str) -> dict:
+    """Joins a player to a lobby by its unique game code."""
+    try:
+        lobby = lobbies[code]
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Lobby not found")
+    lobby["players"].append(player)
     return {"code": code, "players": lobby["players"]}
 
 
