@@ -1,12 +1,7 @@
-from typing import Union
-from pydantic import BaseModel
-from fastapi import FastAPI, WebSocket, HTTPException
-from models import Message, MessageKind, QueryResponse, Lobby, Player
 import random
 
-from fastapi import FastAPI, WebSocket
-
-from .models import Lobby, Message, MessageKind, Player, QueryResponse
+from fastapi import FastAPI, HTTPException, WebSocket
+from models import Lobby, Message, MessageKind, Player, QueryResponse
 
 app = FastAPI()
 
@@ -38,14 +33,17 @@ def get_lobby(code: str) -> dict:
         return {"error": "Lobby not found"}
     return {"code": code, "players": lobby["players"]}
 
+
 @app.post("/lobby/{code}/join")
-def join_lobby(code:str, player:str):
+def join_lobby(code: str, player: str) -> dict:
+    """Joins a player to a lobby by its unique game code."""
     try:
         lobby = lobbies[code]
     except KeyError:
         raise HTTPException(status_code=404, detail="Lobby not found")
     lobby["players"].append(player)
-    return {"code":code, "players":lobby["players"]}
+    return {"code": code, "players": lobby["players"]}
+
 
 @app.get("/testGameState/")
 async def test_game_state() -> Lobby:

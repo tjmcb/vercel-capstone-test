@@ -89,6 +89,7 @@ ignore = [
   "SIM102",
   "SIM108",
   "UP007",  # I like Optional
+  "ISC001", # May cause confict with formatter
 ]
 
 [tool.ruff.lint.isort]
