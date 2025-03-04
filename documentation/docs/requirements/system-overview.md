@@ -8,6 +8,8 @@ This project is a web-based cooking game that offers an interactive and accessib
 
 The goal of this project is to provide a seamless, interactive, connection building experience for children, regardless of their ability to communicate verbally. This is done by creating an environment where a nonverbal child can drive the game using AAC, resulting in decreased social isolation.
 
+Previously established power dynamics have placed AAC users into reactionary roles. The project challenges these social dynamics by positioning AAC users as active game leaders rather than passive participants.
+
 The game is played with relevant Augmentative and Alternative Communication (AAC) on-screen at all times throughout gameplay, so both verbal and nonverbal children can play the game.
 
 The game itself gives each player a role: one player becomes the manager who takes orders from customers and must communicate them to the team. Everyone else becomes cooks who follow the orders and respond to the manager. For both roles, an on-screen interactive AAC interface will cover all communication needs and provide visual indicators when someone else is utilizing its functions.

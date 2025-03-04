@@ -6,15 +6,15 @@ sidebar_position: 4
 
 ## Functional
 
-### Lobby Lifecycle
-- The system must let users create a game room or join others with a code.
-- The system must allow up to 4 users to join a lobby.
-- The system must provide each player with an avatar that they will be referred to by.
-
 ### AAC Communication
 - The system must provide a way for users to communicate using AAC.
 - The system must play AAC communication out loud through text-to-speech on the speaker’s device.
 - The system must show a speech bubble on other players' devices to indicate that someone else is communicating using AAC.
+
+### Lobby Lifecycle
+- The system must let users create a game room or join others with a code.
+- The system must allow up to 4 users to join a lobby.
+- The system must provide each player with an avatar that they will be referred to by.
 
 ### Game Start
 - The system must include four roles in the game: one manager role and three cooking station roles.
@@ -39,6 +39,15 @@ sidebar_position: 4
 - The system must allow employees to communicate requests to repeat orders or update the manager on their status using AAC.
 - The system must allow employees to receive orders from the manager.
 - The system must allow employees to complete orders by processing ingredients, placing ingredients, and following the manager’s orders.
+
+### Gameplay Flow  
+
+- The manager will relay customer orders to the employees.
+  - The manager sees the order on their screen and has an AAC board available which has all the tools needed to relay the customer's orders. The AAC board will play out loud on the manager's device, so all the employees can hear the directions, and complete their orders.
+- Employees must prepare orders at their assigned stations.
+  - An employee will have access to AAC for requesting the manager to repeat the order.
+- Once an order is complete, employees send it to the manager, who serves it to the customer.  
+- Customers will pay based on the accuracy and speed of order completion.  
 
 ### Game Progression
 - The system must put players through rounds presented as days.
@@ -72,18 +81,12 @@ sidebar_position: 4
     - Chop potatoes and place them in a deep fryer.  
     - Wait for the fries to cook before serving.  
 
-#### Gameplay Flow  
-
-- The manager will relay customer orders to the employees.  
-- Employees must prepare orders at their assigned stations.  
-- Once an order is complete, employees send it to the manager, who serves it to the customer.  
-- Customers will pay based on the accuracy and speed of order completion.  
 
 #### Scoring System  
 
 - **Order Pricing for Each Correct Item:**  
   - Burger: **$5**  
-  - Side: **$2.50**  
+  - Side: **$3**  
   - Drink: **$1**  
 - **Tip Bonus:**  
   - 0% to 25% based on completion speed.  
@@ -93,10 +96,10 @@ sidebar_position: 4
 
 ## Non-Functional
 - The system must integrate AAC communication seamlessly and ensure it is easy to use.  
+- The system must be compatible with mobile devices and modern web browsers.
 - The system must support real-time communication with minimal latency.  
 - The system must provide an intuitive and accessible user interface.  
 - The system must ensure secure access to game lobbies and protect user data.  
 - The system must support many concurrent game lobbies without performance degradation.  
 - The system must maintain consistent performance and handle network disruptions gracefully.  
 - The system must be designed for easy updates and future feature expansions.  
-- The system must be compatible with mobile devices and modern web browsers.
