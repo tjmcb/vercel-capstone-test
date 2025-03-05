@@ -1,7 +1,7 @@
 import random
 
 from fastapi import FastAPI, HTTPException, WebSocket
-from models import Lobby, Message, Player
+from models import Message
 
 app = FastAPI()
 
@@ -43,27 +43,6 @@ def join_lobby(code: str, player: str) -> dict:
         raise HTTPException(status_code=404, detail="Lobby not found")
     lobby["players"].append(player)
     return {"code": code, "players": lobby["players"]}
-
-
-@app.get("/testGameState/")
-async def test_game_state() -> Lobby:
-    """Simulates and returns a test game state."""
-    # create lobby
-    game = Lobby(id=0)
-
-    # add players to lobby
-    player1 = Player(id=1, name="player 1")
-    game.players[player1.id] = player1
-    game.player_count += 1
-    player2 = Player(id=2, name="player 2")
-    game.players[player2.id] = player2
-    game.player_count += 1
-
-    # start game
-    game.started = True
-    game.current_turn = player1.id
-
-    return game
 
 
 @app.get("/")
