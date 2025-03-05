@@ -66,3 +66,41 @@ class Player(BaseModel):
 
 class MessageKind(StrEnum):
     """Enum for different message kinds."""
+
+    lobby_lifecycle = "lobby_lifecycle"
+
+
+class LobbyLifecycleEventKind(StrEnum):
+    """Enum for different lobby lifecycle event kinds."""
+
+    player_join = "player_join"
+    player_leave = "player_leave"
+    game_start = "game_start"
+
+
+class PlayerJoin(BaseModel):
+    """Event for a player joining a lobby."""
+
+    type: Literal[MessageKind.lobby_lifecycle]
+    lifecycle_type: Literal[LobbyLifecycleEventKind.player_join]
+
+    id: str
+
+
+class PlayerLeave(BaseModel):
+    """Event for a player leaving a lobby."""
+
+    type: Literal[MessageKind.lobby_lifecycle]
+    lifecycle_type: Literal[LobbyLifecycleEventKind.player_leave]
+
+    id: str
+
+
+class GameStart(BaseModel):
+    """Event for the host starting the game."""
+
+    type: Literal[MessageKind.lobby_lifecycle]
+    lifecycle_type: Literal[LobbyLifecycleEventKind.game_start]
+
+
+Message = TypeAdapter(Annotated[PlayerJoin, Field(discriminator="type")])

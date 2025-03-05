@@ -1,7 +1,7 @@
 import random
 
 from fastapi import FastAPI, HTTPException, WebSocket
-from models import Lobby, Message, MessageKind, Player, QueryResponse
+from models import Lobby, Message, Player
 
 app = FastAPI()
 
@@ -81,24 +81,10 @@ async def websocket_endpoint(websocket: WebSocket) -> None:
         data = await websocket.receive_text()
 
         try:
-            message = Message.parse_raw(data)
+            message = Message.validate_json(data)
         except Exception as e:
             await websocket.send_text(f"[Server] Error: {e!s}")
         else:
             match message.data.type:
-                case MessageKind.query:
-                    query = message.data
-                    response = QueryResponse(type=MessageKind.query_response, count=2)
-                    await websocket.send_text(
-                        f"[Server] Query received for player {query.target_player_id}, card {query.card}.\
-                            Responding with count: {response.count} (placeholder)"
-                    )
-
-                case MessageKind.chat:
-                    chat = message.data
-                    await websocket.send_text(
-                        f"[Server] Chat received from player {message.source_player_id}: {chat.message}"
-                    )
-
                 case _:
                     await websocket.send_text("[Server] Unknown message type received.")
