@@ -3,29 +3,10 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-def make_deck(x):
-    '''
-    Makes a deck composing of x of each card
-
-    Parameters:
-        x (int): The amount of each card to add to deck
-    '''
-
-    # Single character representation of a deck of cards, no suits
-    cards = ["A","2","3","4","5","6","7","8","9","T","J","Q","K"]
-
-    # Add x of each card to deck
-    deck = []
-    
-    for card in cards:
-        for i in range(x):
-            deck.append(card)
-
-    return deck
 
 class Lobby(BaseModel):
-    '''
-    A class representing a game state
+    """
+    A class representing a game state.
 
     Attributes:
         id (int): The lobby's internal ID
@@ -39,7 +20,8 @@ class Lobby(BaseModel):
 
     Methods:
         get_deck_count(): Returns size of the deck
-    '''
+    """
+
     id: int
     code: str = "ABC"
     players: dict = dict()
@@ -48,14 +30,15 @@ class Lobby(BaseModel):
     started: bool = False
 
     current_turn: int = -1
-    deck: list[str] = make_deck(4)
+    # deck: list[str] = make_deck(4)
 
-    def get_deck_count(self):
-        return len(self.deck)
+    # def get_deck_count(self):
+    #     return len(self.deck)
+
 
 class Player(BaseModel):
-    '''
-    A class representing a player's ingame data
+    """
+    A class representing a player's ingame data.
 
     Attributes:
         id (int): The player's internal ID
@@ -67,7 +50,8 @@ class Player(BaseModel):
 
     Methods:
         get_card_count(): Returns player's hand size
-    '''
+    """
+
     id: int
     name: str = "Unnamed Player"
     socket: None = None
@@ -75,9 +59,11 @@ class Player(BaseModel):
     cards: list[str] = []
     books: list[str] = []
 
-    def get_card_count(self):
+    def get_card_count(self) -> int:
+        """Returns the number of cards in the player's hand."""
         return len(self.cards)
-      
+
+
 class MessageKind(StrEnum):
     """Enum for different message kinds."""
 

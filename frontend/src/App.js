@@ -51,7 +51,7 @@ const App = () => {
         }
     };
 
-    const isWebSocketConnecting = ws && ws.readyState === WebSocket.CONNECTING;
+	const isWebSocketConnecting = ws && ws.readyState === WebSocket.CONNECTING;
 
     return (
         <div style={{ padding: "1rem" }}>
