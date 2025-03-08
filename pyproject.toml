@@ -107,3 +107,6 @@ combine-as-imports = true
 include = ["src/**/*.py"]
 venvPath = "."
 venv = ".venv"
+
+[tool.coverage.html]
+directory = "documentation/static/htmlcov"
