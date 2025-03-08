@@ -39,7 +39,16 @@ class Player(BaseModel):
 class MessageKind(StrEnum):
     """Enum for different message kinds."""
 
+    game_state = "game_state"
     lobby_lifecycle = "lobby_lifecycle"
+    chat = "chat"
+
+
+class GameState(BaseModel):
+    """Message to update frontend game state."""
+
+    type: Literal[MessageKind.game_state]
+    state: dict
 
 
 class LobbyLifecycleEventKind(StrEnum):
@@ -73,6 +82,15 @@ class GameStart(BaseModel):
 
     type: Literal[MessageKind.lobby_lifecycle]
     lifecycle_type: Literal[LobbyLifecycleEventKind.game_start]
+
+
+class Chat(BaseModel):
+    """Represents a chat message sent between players."""
+
+    type: Literal[MessageKind.chat]
+
+    typing: bool
+    message: str
 
 
 Message = TypeAdapter(Annotated[PlayerJoin, Field(discriminator="type")])
