@@ -89,8 +89,8 @@ class Chat(BaseModel):
 
     type: Literal[MessageKind.chat]
 
+    id: str
     typing: bool
-    message: str
 
 
 Message = TypeAdapter(Annotated[PlayerJoin, Field(discriminator="type")])
