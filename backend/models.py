@@ -1,7 +1,7 @@
 from enum import StrEnum
-from typing import Literal
+from typing import Annotated, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, TypeAdapter
 
 
 class Lobby(BaseModel):
@@ -12,28 +12,13 @@ class Lobby(BaseModel):
         id (int): The lobby's internal ID
         code (str): The code used to join the lobby
         players (dict): A list of player objects participating in the game
-        player_count (int): Number of players in game, max 4
-
         started (bool): Whether the game has started
-
-        current_turn (int): The ID of the player whose turn it current is
-
-    Methods:
-        get_deck_count(): Returns size of the deck
     """
 
     id: int
     code: str = "ABC"
     players: dict = dict()
-    player_count: int = 0
-
     started: bool = False
-
-    current_turn: int = -1
-    # deck: list[str] = make_deck(4)
-
-    # def get_deck_count(self):
-    #     return len(self.deck)
 
 
 class Player(BaseModel):
@@ -44,78 +29,68 @@ class Player(BaseModel):
         id (int): The player's internal ID
         code (str): The code used to join the game
         socket (): TODO: A web socket object (this is probably its own class idk yet)
-
-        cards (list[str]): A list of cards this player has, private
-        books (list[str]): A list of books this player has, visible to other players
-
-    Methods:
-        get_card_count(): Returns player's hand size
     """
 
     id: int
     name: str = "Unnamed Player"
     socket: None = None
 
-    cards: list[str] = []
-    books: list[str] = []
-
-    def get_card_count(self) -> int:
-        """Returns the number of cards in the player's hand."""
-        return len(self.cards)
-
 
 class MessageKind(StrEnum):
     """Enum for different message kinds."""
 
-    query = "query"
-    query_response = "query_response"
+    game_state = "game_state"
+    lobby_lifecycle = "lobby_lifecycle"
     chat = "chat"
 
 
-class Query(BaseModel):
-    """
-    Represents the action of a player asking for a card.
+class GameState(BaseModel):
+    """Message to update frontend game state."""
 
-    Attributes:
-        target_player_id: The id of the player being asked for cards.
-    """
-
-    type: Literal[MessageKind.query]
-    target_player_id: int
-    card: int
+    type: Literal[MessageKind.game_state]
+    state: dict
 
 
-class QueryResponse(BaseModel):
-    """
-    The server response to a player query.
+class LobbyLifecycleEventKind(StrEnum):
+    """Enum for different lobby lifecycle event kinds."""
 
-    Attributes:
-        count: Non-negative number of cards the target player had.
-    """
+    player_join = "player_join"
+    player_leave = "player_leave"
+    game_start = "game_start"
 
-    type: Literal[MessageKind.query_response]
-    count: int
+
+class PlayerJoin(BaseModel):
+    """Event for a player joining a lobby."""
+
+    type: Literal[MessageKind.lobby_lifecycle]
+    lifecycle_type: Literal[LobbyLifecycleEventKind.player_join]
+
+    id: str
+
+
+class PlayerLeave(BaseModel):
+    """Event for a player leaving a lobby."""
+
+    type: Literal[MessageKind.lobby_lifecycle]
+    lifecycle_type: Literal[LobbyLifecycleEventKind.player_leave]
+
+    id: str
+
+
+class GameStart(BaseModel):
+    """Event for the host starting the game."""
+
+    type: Literal[MessageKind.lobby_lifecycle]
+    lifecycle_type: Literal[LobbyLifecycleEventKind.game_start]
 
 
 class Chat(BaseModel):
-    """
-    Represents a chat message from a player.
-
-    Attributes:
-        message: The message.
-    """
+    """Represents a chat message sent between players."""
 
     type: Literal[MessageKind.chat]
-    message: str
+
+    id: str
+    typing: bool
 
 
-class Message(BaseModel):
-    """
-    Represents a generic message.
-
-    Attributes:
-        source_player_id: The id of the player that sent this message.
-    """
-
-    data: Query | QueryResponse | Chat = Field(discriminator="type")
-    source_player_id: int
+Message = TypeAdapter(Annotated[PlayerJoin, Field(discriminator="type")])
